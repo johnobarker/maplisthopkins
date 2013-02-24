@@ -3,6 +3,7 @@ package com.reversewait.service;
 import java.util.List;
 
 import com.reversewait.domain.User;
+import com.reversewait.domain.UserSite;
 
 public interface UserService {
 	
@@ -21,5 +22,7 @@ public interface UserService {
 	List<User> getAllUsers();
 	
 	User getUserInfo(String userName);
+	
+	List<UserSite> getUserSites(String primaryKey);
 	
 }
