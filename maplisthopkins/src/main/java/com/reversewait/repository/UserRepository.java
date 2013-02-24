@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.repository.RepositoryDefinition;
 
 import com.reversewait.domain.User;
+import com.reversewait.domain.UserSite;
 
 @RepositoryDefinition(domainClass = User.class, idClass = String.class)
 public interface UserRepository {
@@ -17,6 +18,9 @@ public interface UserRepository {
 	User findOne(String primaryKey);
 
 	List<User> findAll();
+	
+	@Query(value = "{'id': ?0}", fields = "{'userSites': 1}")	
+	List<UserSite> getUserSites(String primaryKey);
 
 	// filter out the password field
 	@Query(value = "{}", fields = "{'password': 0 }")

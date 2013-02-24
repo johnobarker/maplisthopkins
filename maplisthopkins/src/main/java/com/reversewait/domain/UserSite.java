@@ -13,8 +13,8 @@ public class UserSite implements Serializable {
 	private String id;
 
 	private String siteName;
-	private String login;
-	private String password;
+	private String contactUserName;
+	private String contactPassword;
 	private String contactName;
 	private String contactAddress1;
 	private String contactAddress2;
@@ -28,10 +28,10 @@ public class UserSite implements Serializable {
 	
 	public UserSite() {}
 	
-	public UserSite (String siteName, String login, String password) {
-		this.setSiteName(siteName);
-		this.setLogin(login);
-		this.setPassword(password);
+	public UserSite (String siteName, String contactUserName, String contactPassword) {
+		this.siteName = siteName;
+		this.contactUserName = contactUserName;
+		this.contactPassword = contactPassword;
 	}
 
 	public String getSiteName() {
@@ -42,20 +42,20 @@ public class UserSite implements Serializable {
 		this.siteName = siteName;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getContactUserName() {
+		return contactUserName;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setContactUserName(String contactUserName) {
+		this.contactUserName = contactUserName;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getContactPassword() {
+		return contactPassword;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setContactPassword(String contactPassword) {
+		this.contactPassword = contactPassword;
 	}
 
 	public String getContactName() {
@@ -129,7 +129,5 @@ public class UserSite implements Serializable {
 	public void setContactPhone2(String contactPhone2) {
 		this.contactPhone2 = contactPhone2;
 	}
-	
-
 
 }

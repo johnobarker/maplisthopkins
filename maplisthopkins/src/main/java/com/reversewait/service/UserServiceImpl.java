@@ -11,6 +11,7 @@ import com.reversewait.domain.EventLog;
 import com.reversewait.domain.EventType;
 import com.reversewait.domain.ReverseWaitManagerEvent;
 import com.reversewait.domain.User;
+import com.reversewait.domain.UserSite;
 import com.reversewait.exception.UserEmailAddressNotFoundException;
 import com.reversewait.exception.UserNameNotUniqueException;
 import com.reversewait.repository.UserRepository;
@@ -96,7 +97,10 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	public User getUserInfo(String userName) {
-		System.out.println("UserServiceImpl::getUserInfo for userName:" + userName);
 		return userRepository.getUserInfo(userName);	
+	}
+	
+	public List<UserSite> getUserSites(String primaryKey) {
+		return userRepository.getUserSites(primaryKey);
 	}
 }
