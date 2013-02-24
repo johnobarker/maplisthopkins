@@ -12,7 +12,7 @@ import com.reversewait.domain.Role;
 import com.reversewait.domain.User;
 
 
-public class RecipeUserDetails implements UserDetails {
+public class ReverseWaitUserDetails implements UserDetails {
 	
 	/**
 	 * 
@@ -21,7 +21,7 @@ public class RecipeUserDetails implements UserDetails {
 	
 	private User user;
 		
-	public RecipeUserDetails(final User user){
+	public ReverseWaitUserDetails(final User user){
 		this.user = user;
 	}
 

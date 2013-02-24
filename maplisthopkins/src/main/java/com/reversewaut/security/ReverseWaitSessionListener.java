@@ -18,7 +18,7 @@ import com.reversewait.domain.User;
 import com.reversewait.service.UserService;
 
 
-public class RecipeManagerSessionListener implements ServletContextListener, HttpSessionListener {
+public class ReverseWaitSessionListener implements ServletContextListener, HttpSessionListener {
 	@Autowired
 	private ApplicationEventPublisher publisher;
 
@@ -45,7 +45,7 @@ public class RecipeManagerSessionListener implements ServletContextListener, Htt
 	public void sessionDestroyed(HttpSessionEvent event) {
 		SecurityContext context = (SecurityContext) event.getSession().getAttribute("SPRING_SECURITY_CONTEXT");
 		if (context != null) {			
-			RecipeUserDetails user = (RecipeUserDetails)context.getAuthentication().getPrincipal();
+			ReverseWaitUserDetails user = (ReverseWaitUserDetails)context.getAuthentication().getPrincipal();
 						
 			User thisUser = userService.findByUserName(user.getUsername());
 			EventLog el = new EventLog(EventType.EVENT_SECURITY,  "logged out as " + thisUser.getUserName());

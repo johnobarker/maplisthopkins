@@ -15,7 +15,7 @@ import com.reversewait.repository.UserRepository;
 
 
 @Component
-public class RecipeUserDetailsService implements UserDetailsService {
+public class ReverseWaitUserDetailsService implements UserDetailsService {
 	
 	@Autowired
 	UserRepository userRepository;
@@ -33,6 +33,6 @@ public class RecipeUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException(msg);
 		}
 		
-		return new RecipeUserDetails(user);
+		return new ReverseWaitUserDetails(user);
 	}
 }
