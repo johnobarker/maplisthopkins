@@ -2,6 +2,7 @@ package com.reversewait.domain;
 
 import java.io.Serializable;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,7 +11,7 @@ public class UserSite implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private String id;
+	private ObjectId id;
 
 	private String siteName;
 	private String contactUserName;
@@ -26,7 +27,7 @@ public class UserSite implements Serializable {
 	private String contactPhone2;
 	
 	
-	public UserSite() {}
+	public UserSite() {this.id = ObjectId.get();}
 	
 	public UserSite (String siteName, String contactUserName, String contactPassword) {
 		this.siteName = siteName;

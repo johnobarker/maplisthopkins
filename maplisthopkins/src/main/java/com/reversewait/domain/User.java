@@ -29,6 +29,7 @@ public class User implements Serializable {
 	private String phone1;
 	private String phone2;
 	private List<UserSite> userSites;
+	private UserProfile userProfile;
 	
 	
 	// ouch...define a default ctor so Jackson can map incoming json to this object, forget to do this and your're in HTTP 440 hell
@@ -153,6 +154,14 @@ public class User implements Serializable {
 
 	public void setUserSites(List<UserSite> userSites) {
 		this.userSites = userSites;
+	}
+
+	public UserProfile getUserProfile() {
+		return userProfile;
+	}
+
+	public void setUserProfile(UserProfile userProfile) {
+		this.userProfile = userProfile;
 	}
 	
 }
