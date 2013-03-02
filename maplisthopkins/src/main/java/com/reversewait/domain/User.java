@@ -2,7 +2,6 @@ package com.reversewait.domain;
 
 import java.io.Serializable;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import org.springframework.data.annotation.Id;
@@ -28,7 +27,6 @@ public class User implements Serializable {
 	private String zip;
 	private String phone1;
 	private String phone2;
-	private List<UserSite> userSites;
 	private UserProfile userProfile;
 	
 	
@@ -148,14 +146,6 @@ public class User implements Serializable {
 		this.phone2 = phone2;
 	}
 
-	public List<UserSite> getUserSites() {
-		return userSites;
-	}
-
-	public void setUserSites(List<UserSite> userSites) {
-		this.userSites = userSites;
-	}
-
 	public UserProfile getUserProfile() {
 		return userProfile;
 	}
@@ -163,5 +153,5 @@ public class User implements Serializable {
 	public void setUserProfile(UserProfile userProfile) {
 		this.userProfile = userProfile;
 	}
-	
+
 }

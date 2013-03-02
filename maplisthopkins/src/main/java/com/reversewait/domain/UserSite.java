@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
@@ -12,7 +13,10 @@ public class UserSite implements Serializable {
 	
 	@Id
 	private ObjectId id;
-
+	
+	@Indexed
+    private String userId;                  // the user object associated with this site
+	
 	private String siteName;
 	private String contactUserName;
 	private String contactPassword;
@@ -129,6 +133,14 @@ public class UserSite implements Serializable {
 
 	public void setContactPhone2(String contactPhone2) {
 		this.contactPhone2 = contactPhone2;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 }
